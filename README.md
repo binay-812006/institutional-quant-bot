@@ -8,7 +8,7 @@ Feature Engineering • Meta Labeling • Walk-Forward Validation • Portfolio 
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue)
 ![Status](https://img.shields.io/badge/Status-Research-orange)
-![License](https://img.shields.io/badge/License-MIT-green)
+![License](https://img.shields.io/badge/License-Not%20Specified-lightgrey)
 
 </div>
 
