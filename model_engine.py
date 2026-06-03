@@ -9,7 +9,7 @@ def build_dataset(df, features):
 
     y = df.loc[
         X.index,
-        'tb_target'
+        'meta_target'
     ]
 
     return X, y

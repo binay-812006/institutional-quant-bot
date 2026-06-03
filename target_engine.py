@@ -1,3 +1,5 @@
+import numpy as np
+
 def create_triple_barrier_labels(df):
 
     df['tb_target'] = 0
@@ -54,5 +56,57 @@ def create_triple_barrier_labels(df):
                 'tb_target'
             )
         ] = label
+
+    return df
+
+def create_meta_labels(
+
+    df,
+
+    horizon=12,
+
+    return_threshold=0.003
+
+):
+
+    future_return = (
+
+        df['close']
+        .shift(-horizon)
+
+        /
+
+        df['close']
+
+        - 1
+    )
+
+    # Default = no trade
+
+    df['meta_target'] = 0
+
+    # Strong Long
+
+    df.loc[
+
+        future_return >
+
+        return_threshold,
+
+        'meta_target'
+
+    ] = 1
+
+    # Strong Short
+
+    df.loc[
+
+        future_return <
+
+        -return_threshold,
+
+        'meta_target'
+
+    ] = -1
 
     return df

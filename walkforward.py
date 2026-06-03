@@ -1,3 +1,11 @@
+from confidence_engine import (
+    generate_confidence_signals
+)
+
+from backtester import (
+    run_backtest
+)
+
 from sklearn.ensemble import (
     RandomForestClassifier
 )
@@ -18,6 +26,10 @@ def walkforward_validation(
     results = []
 
     start = 0
+
+    rolling_capital = 100000
+
+    capital_history = []
 
     while (
         start + train_size + test_size
